@@ -5,7 +5,7 @@ import pyautogui
 import time
 import os
 
-def capture_screen_video(filename="capture.mp4", duration=5, fps=10):
+def capture_screen_video(filename="capture.mp4", duration=120, fps=50):
     screen_size = pyautogui.size()
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out = cv2.VideoWriter(filename, fourcc, fps, screen_size)
@@ -20,7 +20,7 @@ def capture_screen_video(filename="capture.mp4", duration=5, fps=10):
 
     out.release()
 
-def send_file_to_server(filename, host='127.0.0.1', port=12345):
+def send_file_to_server(filename, host='172.14.2.200', port=12345):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
         with open(filename, "rb") as f:

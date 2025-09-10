@@ -11,7 +11,7 @@ def recevoir(conn):
     conn.close()
 
 def main():
-    host = socket.gethostbyname(socket.gethostname())
+    host = host = '127.0.0.1'
     port = 12345
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
